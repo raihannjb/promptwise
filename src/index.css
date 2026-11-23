@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --color-ink: #16202e;
+  --color-accent: #2b50e6;
+  --color-tint: #e8edff;
+  --color-ok: #1f8a5b;
+}
+
+html {
+  color-scheme: light;
+  --surface-card: #f5f7fb;
+  --surface-card-muted: #ffffff;
+  --surface-card-accent: #e8edff;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-ink: #e8eef8;
+  --color-accent: #9aafff;
+  --color-tint: #202b49;
+  --color-ok: #75d6a5;
+  --color-slate-50: #101725;
+  --color-slate-100: #182235;
+  --color-slate-200: #29364d;
+  --color-slate-300: #3a4962;
+  --color-slate-400: #8493aa;
+  --color-slate-500: #a4b1c5;
+  --color-slate-600: #bdc9da;
+  --color-slate-700: #d3dceb;
+  --color-slate-800: #e4eaf3;
+  --color-slate-900: #f3f6fb;
+  --surface-card: #182235;
+  --surface-card-muted: #182235;
+  --surface-card-accent: #202b49;
+}
+
+body { @apply bg-slate-50 text-ink antialiased; }
+body {
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgb(191 205 255 / 62%), transparent 48%),
+    radial-gradient(ellipse at 88% 18%, rgb(235 202 255 / 56%), transparent 48%),
+    radial-gradient(ellipse at 53% 95%, rgb(184 246 255 / 58%), transparent 55%);
+  background-attachment: fixed;
+}
+
+html[data-theme="dark"] body {
+  background-image:
+    radial-gradient(ellipse at 8% 8%, rgb(45 212 191 / 10%), transparent 38%),
+    radial-gradient(ellipse at 92% 18%, rgb(167 139 250 / 12%), transparent 35%),
+    radial-gradient(ellipse at 55% 95%, rgb(56 130 180 / 10%), transparent 40%);
+}
+
+html[data-theme="dark"] .bg-white { background-color: #182235; }
+html[data-theme="dark"] .bg-green-50 { background-color: #153329; }
+html[data-theme="dark"] .bg-red-50 { background-color: #3b2028; }
+
+.surface-card { background-color: var(--surface-card); }
+.surface-card-muted { background-color: var(--surface-card-muted); }
+.surface-card-accent { background-color: var(--surface-card-accent); }
+
+.theme-nav {
+  background-color: rgb(255 255 255 / 78%);
+  backdrop-filter: blur(14px);
+}
+
+html[data-theme="dark"] .theme-nav {
+  background-color: rgb(16 23 37 / 82%);
+}
+
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
