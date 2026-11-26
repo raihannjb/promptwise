@@ -1,0 +1,123 @@
+/* Hallmark · shape: Narrative Workflow · genre: editorial · theme: Formwork, adapted to PromptWise palette · redesign: full
+ * paper: existing light/dark palettes · accent: #2b50e6 / #9aafff · display: Poppins · body: Poppins · hero: Stage · nav: slab · footer: none · signature: existing prompt comparison
+ * axes: light/display-condensed/cool · posture: Stage · contrast: checked · fold: unrendered (Chrome unavailable) · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V4 · weakest: E, adapt the construction theme to the existing colour system and real lesson content */
+/* Hallmark · dismissed 74 · these default slate shades belong to the existing project palette, retained at the user's request */
+@theme static {
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem);
+  --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem);
+  --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem);
+  --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --color-paper: #f8fafc;
+  --color-paper-2: #f1f5f9;
+  --color-paper-3: #e2e8f0;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-red-50: #fef2f2;
+  --color-red-400: #f87171;
+  --color-green-50: #f0fdf4;
+  --color-ink: #16202e;
+  --color-ink-2: #475569;
+  --color-muted: #64748b;
+  --color-rule: #cbd5e1;
+  --color-accent: #2b50e6;
+  --color-tint: #e8edff;
+  --color-accent-ink: #fdfdff;
+  --color-focus: #2b50e6;
+  --color-error: #dc2626;
+  --color-success: #1f8a5b;
+  --color-ok: #1f8a5b;
+  --font-display: "Oswald", ui-sans-serif, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --radius-card: 6px;
+  --radius-pill: 999px;
+  --shadow-card: none;
+  --tracking-display: -0.005em;
+}
+:root {
+  --surface-success: #f0fdf4;
+  --surface-error: #fef2f2;
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --dur-micro: 120ms;
+  --dur-short: 180ms;
+  --dur-long: 320ms;
+  --container: 1240px;
+  --gutter: 56px;
+  --gap-columns: 24px;
+  --section-gap-s: 88px;
+  --section-gap: 112px;
+  --section-gap-l: 136px;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+  --rule-hair: 1px;
+}
+html[data-theme="dark"] {
+  --color-paper: #101725;
+  --color-paper-2: #182235;
+  --color-paper-3: #29364d;
+  --color-slate-50: #101725;
+  --color-slate-100: #182235;
+  --color-slate-200: #29364d;
+  --color-slate-300: #3a4962;
+  --color-slate-400: #8493aa;
+  --color-slate-500: #a4b1c5;
+  --color-slate-600: #bdc9da;
+  --color-slate-700: #d3dceb;
+  --color-slate-800: #e4eaf3;
+  --color-slate-900: #f3f6fb;
+  --color-green-50: #153329;
+  --color-red-50: #3b2028;
+  --color-ink: #e8eef8;
+  --color-ink-2: #d3dceb;
+  --color-muted: #a4b1c5;
+  --color-rule: #3a4962;
+  --color-accent: #9aafff;
+  --color-tint: #202b49;
+  --color-accent-ink: #101725;
+  --color-focus: #9aafff;
+  --color-error: #f87171;
+  --color-success: #75d6a5;
+  --color-ok: #75d6a5;
+  --surface-success: #153329;
+  --surface-error: #3b2028;
+}
+@media (max-width: 60rem) {
+  :root { --gutter: 24px; --section-gap-s: 72px; --section-gap: 88px; --section-gap-l: 112px; }
+}
+@media (max-width: 40rem) {
+  :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 88px; --gap-columns: 16px; }
+}

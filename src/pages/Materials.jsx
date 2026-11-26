@@ -7,7 +7,7 @@ const groups = [
   { slug: 'prompt-engineering', label: 'Prompting & Computational Thinking' },
 ]
 
-export default function Materials() {
+export default function Materials({ lockedMessage }) {
   const [visited] = useState(loadVisited)
 
   return (
@@ -15,6 +15,7 @@ export default function Materials() {
       <header className="mb-8 text-center">
         <h1 className="text-3xl font-bold md:text-4xl">Materi</h1>
         <p className="mt-2 text-slate-600">Pilih topik yang ingin kamu pelajari.</p>
+        {lockedMessage && <p role="status" className="mt-3 font-medium text-accent">{lockedMessage}</p>}
       </header>
 
       <div className="grid gap-6 md:grid-cols-2">

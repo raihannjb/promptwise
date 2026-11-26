@@ -1,23 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { modules } from '../content'
-import { loadVisited, VISITED_KEY } from '../content/progress'
 import Sidebar from '../components/Sidebar'
 import Visual from '../components/Visual'
 
-export default function Module({ slug, idx }) {
+export default function Module({ slug, idx, visited, onVisit, materialsComplete }) {
   const mod = modules[slug]
   const last = mod.items.length - 1
   const i = Math.min(Math.max((parseInt(idx, 10) || 1) - 1, 0), last)
   const item = mod.items[i]
-  const [visited, setVisited] = useState(loadVisited)
   const id = `${slug}/${i}`
 
   useEffect(() => {
     if (visited.includes(id)) return
-    const next = [...visited, id]
-    setVisited(next)
-    try { localStorage.setItem(VISITED_KEY, JSON.stringify(next)) } catch { /* abaikan */ }
-  }, [id])
+    onVisit(id)
+  }, [id, onVisit, visited])
 
   let prev = null
   if (i > 0) prev = { href: `#/${slug}/${i}`, label: 'Sebelumnya' }
@@ -58,7 +54,12 @@ export default function Module({ slug, idx }) {
           <p className="mt-4 text-xs text-slate-500">Sumber: {item.sumber}</p>
           <div className="mt-8 flex flex-wrap justify-between gap-3">
             {prev ? <a href={prev.href} className="rounded-lg border border-slate-300 px-4 py-2 text-sm hover:border-accent">{prev.label}</a> : <span />}
-            <a href={next.href} className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90">{next.label}</a>
+            {next.href === '#/selesai' && !materialsComplete
+              ? <button type="button" disabled title="Buka semua materi sebelum menuju kuis akhir"
+                className="cursor-not-allowed rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white opacity-50">
+                Selesai 🔒
+              </button>
+              : <a href={next.href} className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90">{next.label}</a>}
           </div>
         </article>
       </div>

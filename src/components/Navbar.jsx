@@ -4,10 +4,11 @@ import { createPortal } from 'react-dom'
 const links = [
   { href: '#/', slug: '', label: 'Beranda' },
   { href: '#/materi', slug: 'materi', activePages: ['materi', 'literasi-ai', 'prompt-engineering'], label: 'Materi' },
+  { href: '#/selesai', slug: 'selesai', label: 'Link Kuis Akhir', requiresMaterials: true },
   { href: '#/glosarium', slug: 'glosarium', label: 'Glosarium' },
 ]
 
-export default function Navbar({ page, theme, onToggleTheme }) {
+export default function Navbar({ page, theme, materialsComplete, onToggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -28,11 +29,21 @@ export default function Navbar({ page, theme, onToggleTheme }) {
 
   const renderLinks = () => links.map((l) => {
     const active = l.activePages ? l.activePages.includes(page) : page === l.slug
+    const locked = l.requiresMaterials && !materialsComplete
     return (
       <li key={l.slug}>
         <a href={l.href} aria-current={active ? 'page' : undefined}
-          onClick={() => setMenuOpen(false)}
-          className={active ? 'font-bold text-accent' : 'text-slate-600 hover:text-ink'}>
+          aria-disabled={locked || undefined}
+          title={locked ? 'Buka semua materi untuk membuka kuis akhir' : undefined}
+          onClick={(event) => {
+            if (locked) {
+              event.preventDefault()
+              return
+            }
+            setMenuOpen(false)
+          }}
+          className={`${active ? 'font-bold text-accent' : 'text-slate-600 hover:text-ink'} ${locked ? 'cursor-not-allowed opacity-50' : ''}`}>
+          {locked && <span aria-hidden="true" className="mr-1">🔒</span>}
           {l.label}
         </a>
       </li>

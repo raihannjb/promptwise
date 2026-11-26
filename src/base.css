@@ -1,0 +1,22 @@
+/* Hallmark · shape: Narrative Workflow · genre: editorial · theme: Formwork, adapted to PromptWise palette · redesign: full · axes: light/display-condensed/cool · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V4 · weakest: E, adapt the construction theme to the existing colour system and real lesson content */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { min-width: 320px; scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: 84px; }
+body { min-width: 320px; margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.6; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+h1, h2, h3 { min-width: 0; margin: 0; color: var(--color-ink); font-family: var(--font-display); font-weight: 700; letter-spacing: var(--tracking-display); line-height: 1.05; overflow-wrap: break-word; text-transform: uppercase; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+img, video { display: block; max-width: 100%; height: auto; }
+svg { display: block; }
+button, input, select, textarea { font: inherit; }
+button { color: inherit; }
+[hidden] { display: none !important; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.num, .figure, td.num { font-variant-numeric: tabular-nums; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: clip; clip-path: inset(50%); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
