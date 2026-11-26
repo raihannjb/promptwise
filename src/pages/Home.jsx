@@ -5,7 +5,7 @@ export default function Home() {
     <div className="home-page text-center">
       <section className="home-hero px-4 py-10 md:py-14">
         <div className="mx-auto max-w-4xl">
-          <h1 className="text-5xl font-bold tracking-tight md:text-6xl">PromptWise</h1>
+          <h1 className="text-5xl font-bold tracking-tight md:text-6xl">PromptWise?</h1>
           <p className="mx-auto mt-4 max-w-xl text-xl text-slate-600">Media Edukasi Literasi AI &amp; Problem Solving Pemrograman</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="#/materi" className={`${btn} bg-accent text-white hover:opacity-90`}>Pelajari Materi</a>

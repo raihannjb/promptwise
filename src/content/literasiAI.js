@@ -21,6 +21,7 @@ export default {
         'Error hanya muncul jika aturan bahasa dilanggar. Kesalahan logika bisa lolos tanpa pesan apa pun.',
         'Tiga langkah memeriksa: (1) hitung sendiri hasil yang seharusnya untuk beberapa contoh angka, (2) telusuri kode baris demi baris dengan angka yang sama, (3) bandingkan keduanya.',
         'Pilih contoh angka di sekitar batas syarat: sedikit di bawah, tepat di batas, dan di atasnya.',
+        'Gunakan juga angka sederhana yang hasilnya sudah kamu ketahui (misalnya 10% dari 100 adalah 10) untuk mengecek rumus dari AI.',
         'Pemula sering sulit memahami kode yang tidak ia tulis sendiri, jadi telusuri pelan-pelan dan jangan ragu bertanya.',
       ],
       contoh: { judul: 'Contoh', isi: 'Bonus 10% jika top-up minimal Rp20.000. Uji dengan 19.999, 20.000, dan 30.000. Hasil seharusnya: 19.999, 22.000, 33.000. Jika kode menghasilkan angka lain pada salah satunya, ada kesalahan.' },

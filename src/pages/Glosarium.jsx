@@ -10,6 +10,7 @@ export default function Glosarium() {
           <div key={g.istilah} className="p-4">
             <dt className="font-semibold">{g.istilah}</dt>
             <dd className="mt-1 text-sm text-slate-700">{g.definisi}</dd>
+            {g.sumber && <dd className="mt-2 text-xs text-slate-500">Sumber: {g.sumber}</dd>}
           </div>
         ))}
       </dl>
